@@ -1,71 +1,75 @@
+<div align="center">
+
 # PeaceCream
 
-**What does peace taste like?**
+### What does peace taste like?
 
-An interactive ice-cream and dessert experience by **Leah Kim and Miki Kawamura**.
+An interactive website that turns flavors, personal values, and small moments of peace into something you can create, discover, and share.
 
-Live website: https://peacecream-one.vercel.app/
+**Designed and developed independently by [Leah Kim](https://github.com/leahkim-cpu).**
 
-## Clone and run locally
+[**Live website**](https://peacecream-one.vercel.app/) · [Source code](site/) · [Run locally](#run-locally)
+
+</div>
+
+[![PeaceCream homepage](docs/screenshots/home-desktop.jpg)](https://peacecream-one.vercel.app/)
+
+## About the project
+
+PeaceCream connects the joy of dessert with reflection, creativity, and human connection. Design an ice cream, choose toppings that represent values such as hope or compassion, and give your creation a personal meaning of peace.
+
+The **Little world** directory brings the experience together: explore an illustrated World Peace Map, collect Passport stamps, save recipes, write a Time Capsule to your future self, or let a worry symbolically melt away. A separate collection offers fixed-flavor dessert gifts with personalized messages and original AI-generated product photography.
+
+Available in **English, Japanese, and Simplified Chinese**, with responsive desktop and mobile layouts.
+
+## A look inside
+
+<table>
+<tr>
+<td width="50%"><a href="docs/screenshots/creator-desktop.jpg"><img src="docs/screenshots/creator-desktop.jpg" alt="Ice-cream creator with value-based toppings and a live photographic preview"></a><br><strong>Create a scoop with meaning</strong></td>
+<td width="50%"><a href="docs/screenshots/world-map-desktop.jpg"><img src="docs/screenshots/world-map-desktop.jpg" alt="Illustrated interactive World Peace Map"></a><br><strong>Explore the World Peace Map</strong></td>
+</tr>
+<tr>
+<td width="50%"><a href="docs/screenshots/dessert-collection-desktop.jpg"><img src="docs/screenshots/dessert-collection-desktop.jpg" alt="Fixed-flavor cakes, including the heart-shaped Love Cake"></a><br><strong>Discover thoughtful dessert gifts</strong></td>
+<td width="50%" align="center"><a href="docs/screenshots/home-mobile.jpg"><img src="docs/screenshots/home-mobile.jpg" alt="PeaceCream on a mobile screen" width="155"></a><br><strong>Made for mobile, too</strong></td>
+</tr>
+</table>
+
+Real screenshots of the working website. Click any image to view it in full.
+
+## Built with
+
+HTML, CSS, and vanilla JavaScript · SVG maps and illustrations · Canvas image composition · Browser storage · Node.js tests
+
+**32 automated tests** cover storage, privacy boundaries, Passport discoveries, Time Capsules, and demo rewards.
+
+## Run locally
 
 ```sh
 git clone https://github.com/leahkim-cpu/peacecream.git
-cd peacecream
-```
-
-No build step or API keys are required. From this directory, run:
-
-```sh
+cd peacecream/site
 python3 -m http.server 8080
 ```
 
-Open http://localhost:8080/ in your browser. Use an HTTP server rather than opening `index.html` directly, so the map data and lazy-loaded modules can load.
+Open **http://localhost:8080/**. No build step or API keys are needed.
 
-## Features
-
-- Create an ice cream with flavors, toppings and a personal peace message.
-- Discover a scoop through a guided reflection.
-- Explore the illustrated World Peace Map and collect Passport stamps.
-- Keep a Recipe Book and Time Capsules, or try Melt Your Worries.
-- Browse ready-made, fixed-flavor dessert gifts with original AI-generated product photography.
-- Create branded photos and share cards.
-- English, Japanese and Simplified Chinese interfaces.
-
-The home page keeps the original ice-cream introduction. **Little world** opens the feature directory at `#world`.
-
-## Storage and demo behavior
-
-Recipes, Passport stamps, Time Capsules and demo rewards are saved in the visitor's browser. They are not backed up or synchronized across devices. The World Peace Map currently reflects recipes shared in that browser; it is not a global shared database.
-
-Gift checkout and reward codes are demonstrations. No payment is taken, no dessert is delivered, and demo discount codes are not valid for real purchases.
-
-Melt Your Worries keeps entered text only in memory and clears it when the experience ends or the visitor leaves. Camera photos are processed locally in the browser.
-
-## Tests
-
-With Node.js installed, run:
+Run tests from the repository root with Node.js:
 
 ```sh
-node --test tests/*.test.js
+node --test site/tests/*.test.js
 ```
 
-## Code structure
+## Repository guide
 
-- `index.html`, `app.js`, `style.css`: main page, ice-cream creator and navigation.
-- `pc-ui.js`, `pc.css`, `pc-sweet.css`: shared feature routing, navigation and styles.
-- `pc-store.js`: browser-local persistence and validation.
-- `pc-map.js`, `pc-passport.js`, `pc-recipes.js`, `pc-capsules.js`, `pc-melt.js`: Little world experiences.
-- `pc-catalog.js`, `pc-shop.js`, `pc-gift.js`: fixed dessert catalog and demo gifts.
-- `pc-camera*.js`, `pc-photos.js`, `pc-share.js`, `pc-rewards-core.js`: photos, sharing and demo rewards.
-- `pc-i18n.js`, `i18n/`: language support.
-- `quiz-*.js`: guided discovery.
-- `assets/`, `fonts/`: website images and bundled fonts.
-- `data/world-paths.json`: geographic map data.
-- `tools/`: optional map-building, translation and visual-development helpers.
-- `tests/`: storage and reward tests.
+- **[site/](site/)** — all website code, assets, fonts, translations, map data, tests, and development helpers.
+- **[docs/screenshots/](docs/screenshots/)** — the portfolio screenshots above.
 
-The map uses Natural Earth geographic data via world-atlas. Bundled typefaces are DM Sans and Fraunces. Optional map rebuilding dependencies are listed in `tools/build-map.mjs`; rebuilding is unnecessary to run the site.
+For deployment, set the static host’s **root directory to `site`**, use no build command, and serve `index.html`.
 
-## Deployment
+## Project status
 
-This is a static website. Publish this directory to a static web host with `index.html` as the entry point and no build command. Vercel deployment identifiers and credentials are intentionally excluded from this repository.
+This is a publicly deployed interactive prototype. Recipes, Passport stamps, Time Capsules, and demo rewards are stored in each visitor’s browser; they are not synchronized across devices or users. The map currently reflects stories shared within that browser. Gift checkout and reward codes are demos; no payments or deliveries are connected.
+
+Worry text is kept only in memory. Camera photos are processed locally. Product photography was generated with AI.
+
+Map geography: Natural Earth via world-atlas. Bundled fonts: DM Sans and Fraunces.
