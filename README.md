@@ -8,7 +8,7 @@ An interactive website that turns flavors, personal values, and small moments of
 
 **Designed and developed independently by [Leah Kim](https://github.com/leahkim-cpu).**
 
-[**Live website**](https://peacecream-one.vercel.app/) · [Source code](site/) · [Run locally](#run-locally)
+[**Live website**](https://peacecream-one.vercel.app/) · [Source code](https://github.com/leahkim-cpu/peacecream/tree/main/site) · [Run locally](#run-locally)
 
 </div>
 
@@ -61,8 +61,8 @@ node --test site/tests/*.test.js
 
 ## Repository guide
 
-- **[site/](site/)** — all website code, assets, fonts, translations, map data, tests, and development helpers.
-- **[docs/screenshots/](docs/screenshots/)** — the portfolio screenshots above.
+- **[site/](https://github.com/leahkim-cpu/peacecream/tree/main/site)** — all website code, assets, fonts, translations, map data, tests, and development helpers.
+- **[docs/screenshots/](https://github.com/leahkim-cpu/peacecream/tree/main/docs/screenshots)** — the portfolio screenshots above.
 
 For deployment, set the static host’s **root directory to `site`**, use no build command, and serve `index.html`.
 
