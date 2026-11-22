@@ -1,0 +1,12 @@
+# Local settings and generated files
+.vercel/
+.claude/
+.codex/
+.env
+.env.*
+!.env.example
+.DS_Store
+node_modules/
+*.log
+*.pem
+*.key

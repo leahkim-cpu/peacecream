@@ -6,7 +6,12 @@ An interactive ice-cream and dessert experience by **Leah Kim and Miki Kawamura*
 
 Live website: https://peacecream-one.vercel.app/
 
-## Run locally
+## Clone and run locally
+
+```sh
+git clone https://github.com/leahkim-cpu/peacecream.git
+cd peacecream
+```
 
 No build step or API keys are required. From this directory, run:
 
